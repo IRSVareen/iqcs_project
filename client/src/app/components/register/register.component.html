@@ -1,0 +1,37 @@
+<div class="container">
+    <h2 class="title">Register Yourself</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-container">
+        <div class="form-group">
+            <label for="userName">User Name:</label>
+            <input type="text" id="userName" class="form-control" formControlName="userName" />
+            <div *ngIf="registerForm.get('userName')?.invalid && registerForm.get('userName')?.touched" class="error">
+                <span *ngIf="registerForm.get('userName')?.errors?.['required']">User Name is required.</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" class="form-control" formControlName="password" />
+            <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error">
+                <span *ngIf="registerForm.get('password')?.errors?.['required']">Password is required.</span>
+                <span *ngIf="registerForm.get('password')?.errors?.['minlength']">Must be at least 6 characters long.</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="role">Role:</label>
+            <select id="role" class="form-control" formControlName="role">
+                <option value="" disabled selected>Select a role</option>
+                <option value="manager">Manager</option>
+                <option value="operator">Operator</option>
+                <option value="quality_control_engineer">Quality Control Engineer</option>
+            </select>
+            <div *ngIf="registerForm.get('role')?.invalid && registerForm.get('role')?.touched" class="error">
+                <span *ngIf="registerForm.get('role')?.errors?.['required']">Role is required.</span>
+                <span *ngIf="registerForm.get('role')?.errors?.['invalidRole']">Invalid role selected.</span>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="registerForm.invalid" class="btn-submit">Register</button>
+    </form>
+</div>

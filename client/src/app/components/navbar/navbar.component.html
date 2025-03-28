@@ -1,0 +1,9 @@
+<nav *ngIf="isLogin" class="navbar">
+    <ul>
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/analysis">Analysis</a></li>
+      <li *ngIf="isManager"><a routerLink="/register">Register</a></li> 
+      <li><button (click)="logout()">{{userName}}</button></li>
+    </ul>
+  </nav>
+  

@@ -1,0 +1,47 @@
+*{
+    margin: 0%;
+}
+
+.container {
+    height: 87vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+.machine-name, .machine-efficiency{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+}
+
+.defect-notdefect{
+    position: absolute;
+    left: 200px;
+    top: 400px;
+    background: rgba(185, 15, 15, 0.973);
+    border: 2px solid rgba(37, 35, 35, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 4px 6px rgba(46, 28, 136, 0.1);
+    font-weight: bold;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.graph {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    height: 100px;
+    width: 100px; 
+}
