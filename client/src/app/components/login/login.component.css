@@ -1,77 +1,80 @@
-/* General Container Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2d3e50; 
+    height: 100vh;
+    margin: 0;
+}
+
 .container {
-  max-width: 350px;
-  margin: 50px auto;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  text-align: center;
+    background-color: white;
+    margin-top:200px;
+    margin-left: 650px;
+    width: 450px;
+    height: 450px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(2, 7, 77, 0.548);
+    text-align: center;
+    border: 1px solid #2d3e50; 
 }
 
-/* Heading */
 h2 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 20px;
+    color: #1c4687;
+    margin: 50px auto;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-/* Form Styling */
 .form-group {
-  margin-bottom: 15px;
-  text-align: left;
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 15px;
 }
 
 label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+    color: #1c4687;
+    margin-bottom: 5px;
 }
 
-/* Input Fields */
-.form-control {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-/* Focus Effect */
-.form-control:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  outline: none;
-}
-
-/* Error Message Styling */
-.error {
-  color: red;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-/* Submit Button */
 button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-/* Button Hover & Disabled State */
-button:hover:not(:disabled) {
-  background-color: #0056b3;
-  transform: scale(1.05);
+    background-color: #1c4687;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 button:disabled {
-  background-color: gray;
-  cursor: not-allowed;
+    background-color: #b0c4de;
+    cursor: not-allowed;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin: 40px;
+    text-decoration: none;
+    color: #1c4687;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
 }

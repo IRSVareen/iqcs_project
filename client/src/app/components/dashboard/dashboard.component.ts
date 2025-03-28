@@ -19,7 +19,7 @@ export class DashboardComponent {
         labels: ['Defect Products', 'Not Defect Products'],
         datasets: [{
           data: [this.defected, this.not_defected], 
-          backgroundColor: ['#ff4d4d', '#4CAF50'],
+          backgroundColor: ['white', 'black'],
           hoverBackgroundColor: ['#ff6666', '#66bb6a']
         }]
       }

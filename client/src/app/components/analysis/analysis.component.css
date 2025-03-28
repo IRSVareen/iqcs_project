@@ -1,0 +1,43 @@
+*{
+    margin: 0%;
+}
+
+.undefected, .defected{
+    position: absolute;
+
+    left: 1100px;
+    background-color: rgb(204, 191, 191);
+    border: 2px solid black;
+    border-radius: 15px;
+    height: 250px;
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.undefected{
+    top: 250px;
+}
+
+.defected{
+    top: 550px;;
+}
+
+.graph {
+    background-color: rgb(204, 191, 191);
+    border: 2px solid black;
+    border-radius: 15px ;
+    position: absolute;
+    top: 250px;
+    left: 200px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    height: 100px;
+    width: 100px; 
+}

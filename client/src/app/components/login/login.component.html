@@ -2,7 +2,7 @@
     <h2>Login</h2>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-            <label for="userName">User Name:</label>
+            <label for="userName">User Id:</label>
             <input type="text" id="userName" class="form-control" formControlName="userName" />
             <div *ngIf="loginForm.get('userName')?.invalid && loginForm.get('userName')?.touched" class="error">
                 <span *ngIf="loginForm.get('userName')?.errors?.['required']">User Name is required.</span>
