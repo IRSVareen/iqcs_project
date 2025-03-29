@@ -26,6 +26,10 @@ export class DashboardComponent implements AfterViewInit {
       this.not_defected = val
       this.updateChart()
     })
+    this.dataService.efficiency$.subscribe(val =>{
+      this.efficiency = val;
+      this.updateChart();
+    })
   }
 
   ngAfterViewInit() {
@@ -47,7 +51,7 @@ export class DashboardComponent implements AfterViewInit {
           y: {
             beginAtZero: true,
             min: 0,
-            max: 50000
+            max: 100000
           }
         }
       }

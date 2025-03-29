@@ -9,7 +9,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class AnalysisComponent implements AfterViewInit, OnInit {
   @ViewChild('pieChart') pieChart!: { nativeElement: HTMLCanvasElement };
-  // efficiency: number = 94;
+  efficiency: number = 0;
   defected: number = 2000;
   not_defected: number = 8000;
   // incrementDefected = 10;
@@ -24,6 +24,10 @@ export class AnalysisComponent implements AfterViewInit, OnInit {
     })
     this.dataService.notDefected$.subscribe(val =>{
       this.not_defected = val;
+      this.updateChart();
+    })
+    this.dataService.efficiency$.subscribe(val =>{
+      this.efficiency = val;
       this.updateChart();
     })
   }

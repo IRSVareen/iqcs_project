@@ -9,6 +9,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./pdfreport.component.css']
 })
 export class PdfreportComponent {
+  efficiency: number = 94;
   defected: Number = 2000;
   not_defected: Number = 8000; 
 
@@ -21,12 +22,17 @@ export class PdfreportComponent {
     this.dataService.notDefected$.subscribe(value => {
       this.not_defected = value;
     });
+
+    this.dataService.efficiency$.subscribe(value =>{
+      this.efficiency = value;
+    })
   }
 
   generateTable() {
     let doc = new jsPDF();
     doc.setFontSize(16);
     doc.text('Analysis Report', 14, 20);
+    doc.text(`Efficiency: ${this.efficiency}%`,14,40)
 
     const tableColumn = ['Material', 'Count'];
     const tableRows = [
@@ -38,7 +44,7 @@ export class PdfreportComponent {
     autoTable(doc,{
       head: [tableColumn],
       body: tableRows,
-      startY: 30,
+      startY: 50,
       theme: 'grid'
     });
     return doc

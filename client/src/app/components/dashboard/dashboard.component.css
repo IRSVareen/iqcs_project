@@ -1,6 +1,5 @@
   .container {
-      width: 99vw;
-      height: 75vh;
+      height: 85vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -8,15 +7,17 @@
       background: white;
       padding: 20px;
       box-sizing: border-box;
+      background-color: #1b2531;
   }
 
   .status {
+    margin-top: 10px;
       font-size: 24px;
       font-weight: bold;
       padding: 15px;
       border-radius: 8px;
       color: white;
-      width: 80%;
+      width: 40%;
       text-align: center;
   }
 
@@ -30,7 +31,7 @@
 
   .chart-container {
       width: 60%;
-      height: 250px;
+      height: 450px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -49,7 +50,7 @@
   }
 
   .box {
-      width: 150px;
+      width: 350px;
       padding: 15px;
       border-radius: 8px;
       font-size: 18px;
