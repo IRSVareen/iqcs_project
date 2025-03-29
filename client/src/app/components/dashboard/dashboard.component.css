@@ -1,0 +1,71 @@
+  .container {
+      width: 99vw;
+      height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 20px;
+      box-sizing: border-box;
+  }
+
+  .status {
+      font-size: 24px;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 8px;
+      color: white;
+      width: 80%;
+      text-align: center;
+  }
+
+  .working {
+      background: linear-gradient(135deg, #28a745, #52c234);
+  }
+
+  .not-working {
+      background: linear-gradient(135deg, #ff6b6b, #ff4757);
+  }
+
+  .chart-container {
+      width: 60%;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f0f0f0;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .stats {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      padding-bottom: 20px;
+  }
+
+  .box {
+      width: 150px;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+  }
+
+  .efficiency {
+      background: linear-gradient(135deg, #1e90ff, #007bff);
+  }
+
+  .defected {
+      background: linear-gradient(135deg, #ff8c00, #ffa500);
+  }
+
+  .not-defected {
+      background: linear-gradient(135deg, #2ed573, #1dd1a1);
+  }

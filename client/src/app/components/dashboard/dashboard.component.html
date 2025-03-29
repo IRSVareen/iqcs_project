@@ -1,3 +1,16 @@
 <div class="container">
-    work
-</div>
+    <div class="status" [ngClass]="{'working': machineWorking, 'not-working': !machineWorking}">
+      {{ machineWorking ? 'Machine is Working' : 'Machine is Off' }}
+    </div>
+  
+    <div class="chart-container">
+      <canvas #barChart *ngIf="machineWorking"></canvas>
+    </div>
+  
+    <div class="stats">
+      <div class="box efficiency">Efficiency: <span  *ngIf="machineWorking">{{ efficiency }}%</span></div>
+      <div class="box defected">Defected: <span *ngIf="machineWorking">{{ defected }}</span></div>
+      <div class="box not-defected">Not Defected: <span *ngIf="machineWorking">{{ not_defected }}</span></div>
+    </div>
+  </div>
+  

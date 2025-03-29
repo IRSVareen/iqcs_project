@@ -49,6 +49,8 @@ button {
 button:hover::after {
   content: " Log-out";
   position: absolute;
+  top: 100px;
+  right: 25px;
   background-color: rgb(148, 141, 141);
   color: white;
   padding: 5px 10px;
