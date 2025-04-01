@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import {  Router } from '@angular/router';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +13,7 @@ export class NavbarComponent implements OnInit {
   userName: string | null = '';
   isManager: boolean= false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.authService.isLoggedIn.subscribe((status) => {
@@ -32,7 +33,14 @@ export class NavbarComponent implements OnInit {
     sessionStorage.removeItem('managerToken');
     sessionStorage.removeItem('role')
     this.authService.setLoginStatus(false);
-    this.updateNavbar()
+    this.updateNavbar();
+    const snackBarConfig: MatSnackBarConfig = {
+      duration: 3000,  
+      horizontalPosition: 'center',  
+      verticalPosition: "top", 
+      panelClass: 'snackbar-style'
+    };
+    this.snackBar.open('Log Out successful!', 'Close', snackBarConfig);
     this.router.navigate(['/login'])
   }
 }

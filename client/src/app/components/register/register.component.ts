@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormBuilder, Validators, AbstractControl} from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -23,7 +24,7 @@ export class RegisterComponent {
   //   )
   // }
 
-  constructor(private fb: FormBuilder, private userService: UserService, private router: Router){
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router, private snackBar: MatSnackBar){
     this.registerForm = this.fb.group({
       userName : ['', [Validators.required, Validators.minLength(3)]],
       password : ['', [Validators.required, Validators.minLength(6)]],
@@ -50,7 +51,14 @@ export class RegisterComponent {
           }
         }
       )
-      this.router.navigate(['/login'])
+      const snackBarConfig: MatSnackBarConfig = {
+        duration: 3000,  
+        horizontalPosition: 'center',  
+        verticalPosition: "top", 
+        panelClass: 'snackbar-style'
+      };
+      this.snackBar.open('Resgisteration successful!', 'Close', snackBarConfig);
+      this.router.navigate(['/home'])
     }else{
       console.log('form is invalid');
     }
