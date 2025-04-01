@@ -26,7 +26,7 @@ export class LoginComponent {
       this.userService.loginUser(this.loginForm.value).subscribe(
         (data)=>{
           // console.log(data);
-          if (data && data.userName && data._id) { 
+          if (data && data?.userName && data?._id) { 
             this.userId = data._id; 
             console.log(this.userId);
             this.router.navigate(['/home']);

@@ -8,19 +8,20 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit{
+export class RegisterComponent {
   registerForm: any = FormGroup;
   roles: string[] = ['manager', 'operator', 'quality control engineer'];
   
-  ngOnInit(): void {
-    this.userService.getUsers().subscribe(
-      (data)=>{
-        // console.log(data);
-      },(err)=>{
-        console.log(err);
-      }
-    )
-  }
+  // ngOnInit(): void {
+  //   this.userService.getUsers().subscribe(
+  //     (data)=>{
+  //       // console.log(data);
+  //       console.log(data);
+  //     },(err)=>{
+  //       console.log(err);
+  //     }
+  //   )
+  // }
 
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router){
     this.registerForm = this.fb.group({

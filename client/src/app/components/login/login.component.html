@@ -1,21 +1,28 @@
 <div class="container">
-    <h2>Login</h2>
+<mat-card class="login-container">
+    <mat-card-title>Login</mat-card-title>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label for="userName">User Id:</label>
-            <input type="text" id="userName" class="form-control" formControlName="userName" />
-            <div *ngIf="loginForm.get('userName')?.invalid && loginForm.get('userName')?.touched" class="error">
-                <span *ngIf="loginForm.get('userName')?.errors?.['required']">User Name is required.</span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" class="form-control" formControlName="password" />
-            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
-                Password is incorrect
-            </div>
-        </div>
-        <a routerLink="/forgetpassword">Forget Password?</a>
-        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      <mat-form-field appearance="outline" class="full-width" appearance="fill">
+        <mat-label>User Id</mat-label>
+        <input matInput type="text" formControlName="userName" />
+        <mat-error *ngIf="loginForm.get('userName')?.hasError('required')">
+          User Name is required.
+        </mat-error>
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline" class="full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+        <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          Password is incorrect
+        </mat-error>
+      </mat-form-field>
+      
+      <a mat-button routerLink="/forgetpassword" class="forgot-password">Forget Password?</a>
+      
+      <button mat-raised-button color="primary" class="full-width" type="submit" [disabled]="loginForm.invalid">
+        Login
+      </button>
     </form>
+  </mat-card>
 </div>
