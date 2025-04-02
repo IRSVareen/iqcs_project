@@ -12,9 +12,8 @@ export class AnalysisComponent implements AfterViewInit, OnInit {
   efficiency: number = 0;
   defected: number = 2000;
   not_defected: number = 8000;
-  // incrementDefected = 10;
-  // incrementNotDefected = 200;
-  chart!: Chart; // Store chart instance
+  chart!: Chart; 
+  isAuthorised = false;
 
   constructor(private dataService: DataService) { }
   ngOnInit() {
@@ -30,6 +29,10 @@ export class AnalysisComponent implements AfterViewInit, OnInit {
       this.efficiency = val;
       this.updateChart();
     })
+    const userRole = sessionStorage.getItem('role')
+    if(userRole === 'manager' || userRole === 'quality control engineer'){
+      this.isAuthorised = true
+    }
   }
 
   ngAfterViewInit() {

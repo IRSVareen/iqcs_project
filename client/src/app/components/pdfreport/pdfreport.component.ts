@@ -13,6 +13,7 @@ export class PdfreportComponent {
   defected: Number = 2000;
   not_defected: Number = 8000; 
 
+
   constructor(private dataService: DataService) { }
   ngOnInit(){
     this.dataService.defected$.subscribe(value => {
@@ -26,6 +27,8 @@ export class PdfreportComponent {
     this.dataService.efficiency$.subscribe(value =>{
       this.efficiency = value;
     })
+    const userRole = sessionStorage.getItem('role')
+    
   }
 
   generateTable() {
