@@ -14,6 +14,7 @@ export class AnalysisComponent implements AfterViewInit, OnInit {
   not_defected: number = 8000;
   chart!: Chart; 
   isAuthorised = false;
+  machineWorking = false
 
   constructor(private dataService: DataService) { }
   ngOnInit() {
@@ -28,6 +29,9 @@ export class AnalysisComponent implements AfterViewInit, OnInit {
     this.dataService.efficiency$.subscribe(val =>{
       this.efficiency = val;
       this.updateChart();
+    })
+    this.dataService.machineWorking$.subscribe(val =>{
+      this.machineWorking = val;
     })
     const userRole = sessionStorage.getItem('role')
     if(userRole === 'manager' || userRole === 'quality control engineer'){

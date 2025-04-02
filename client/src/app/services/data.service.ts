@@ -5,13 +5,15 @@ import { BehaviorSubject, interval } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private defectedSource = new BehaviorSubject<number>(2000);
-  private notDefectedSource = new BehaviorSubject<number>(8000);
+  private defectedSource = new BehaviorSubject<number>(500);
+  private notDefectedSource = new BehaviorSubject<number>(9000);
   private efficiency = new BehaviorSubject<number>(94);
+  private machineWorking = new BehaviorSubject<boolean>(true)
 
   defected$ = this.defectedSource.asObservable();
   notDefected$ = this.notDefectedSource.asObservable();
   efficiency$ = this.efficiency.asObservable();
+  machineWorking$ = this.machineWorking.asObservable();
 
   private incrementDefected = 10;
   private incrementNotDefected = 200;

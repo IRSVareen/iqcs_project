@@ -13,7 +13,7 @@ export class DashboardComponent implements AfterViewInit {
   efficiency: number = 94;
   defected: number = 0;
   not_defected: number = 0;
-  machineWorking: boolean = true;
+  machineWorking: boolean = false;
   chart! :Chart
   
   constructor(private dataService: DataService){ }
@@ -29,6 +29,9 @@ export class DashboardComponent implements AfterViewInit {
     this.dataService.efficiency$.subscribe(val =>{
       this.efficiency = val;
       this.updateChart();
+    })
+    this.dataService.machineWorking$.subscribe(val =>{
+      this.machineWorking = val
     })
   }
 
