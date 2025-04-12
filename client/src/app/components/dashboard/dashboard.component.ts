@@ -15,9 +15,12 @@ export class DashboardComponent implements AfterViewInit {
   not_defected: number = 0;
   machineWorking: boolean = false;
   chart! :Chart
+  connected = false
   
   constructor(private dataService: DataService){ }
   ngOnInit(){
+    this.dataService.connected$.subscribe(status => this.connected = status);
+
     this.dataService.defected$.subscribe(val =>{
       this.defected = val
       this.updateChart()

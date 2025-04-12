@@ -14,10 +14,13 @@ export class AnalysisComponent implements AfterViewInit, OnInit {
   not_defected: number = 8000;
   chart!: Chart; 
   isAuthorised = false;
-  machineWorking = false
+  machineWorking = false;
+  connected = false
 
   constructor(private dataService: DataService) { }
   ngOnInit() {
+    this.dataService.connected$.subscribe(status => this.connected = status);
+
     this.dataService.defected$.subscribe(val =>{
       this.defected =  val;
       this.updateChart();
